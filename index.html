@@ -139,28 +139,91 @@
 <section id="skills" class="skills-section">
   <div class="section-header">
     <h2 class="section-title">Tech Stack</h2>
-    <p class="section-subtitle">Tecnologias que domino e uso no dia a dia</p>
+    <p class="section-subtitle">Tecnologias que domino e como uso cada uma</p>
   </div>
 
-  <div class="skills-carousel">
-    <div class="skill-card">React</div>
-    <div class="skill-card">Next.js</div>
-    <div class="skill-card">TypeScript</div>
-    <div class="skill-card">Node.js</div>
-    <div class="skill-card">Python</div>
-    <div class="skill-card">MongoDB</div>
-    <div class="skill-card">AWS</div>
-    <div class="skill-card">JavaScript</div>
-    <div class="skill-card">GraphQL</div>
-    <div class="skill-card">REST APIs</div>
-    <div class="skill-card">Tailwind CSS</div>
-    <div class="skill-card">React Native</div>
-    <div class="skill-card">Vue.js</div>
-    <div class="skill-card">Express.js</div>
-    <div class="skill-card">Django</div>
-    <div class="skill-card">Redis</div>
+  <div class="carousel">
+    <button id="prev">&#10094;</button>
+    
+    <div class="carousel-track" id="carouselTrack">
+      <!-- Cards vão aqui via JS -->
+    </div>
+
+    <button id="next">&#10095;</button>
   </div>
 </section>
+
+<script>
+  const techs = [
+    {
+      icon: "⚛️",
+      title: "React",
+      desc: "Biblioteca JavaScript para construir interfaces de usuário modernas e reativas."
+    },
+    {
+      icon: "⚡",
+      title: "Next.js",
+      desc: "Framework React com renderização server-side e rotas otimizadas para performance."
+    },
+    {
+      icon: "🛡️",
+      title: "TypeScript",
+      desc: "Superset do JavaScript que adiciona tipagem estática e maior segurança ao código."
+    },
+    {
+      icon: "🧠",
+      title: "Node.js",
+      desc: "Ambiente de execução para JavaScript no backend, ideal para APIs rápidas."
+    },
+    {
+      icon: "🐍",
+      title: "Python",
+      desc: "Linguagem versátil e poderosa usada em data science, back-end e automações."
+    },
+    {
+      icon: "🍃",
+      title: "MongoDB",
+      desc: "Banco de dados NoSQL orientado a documentos, ideal para aplicações escaláveis."
+    },
+  ];
+
+  const track = document.getElementById("carouselTrack");
+
+  let index = 0;
+
+  function renderCarousel() {
+    track.innerHTML = "";
+
+    for (let i = 0; i < techs.length; i++) {
+      const card = document.createElement("div");
+      card.className = "card";
+      if (i === index) card.classList.add("active");
+
+      card.innerHTML = `
+        <div class="card-icon">${techs[i].icon}</div>
+        <div class="card-title">${techs[i].title}</div>
+        <div class="card-desc">${techs[i].desc}</div>
+      `;
+
+      track.appendChild(card);
+    }
+  }
+
+  function moveNext() {
+    index = (index + 1) % techs.length;
+    renderCarousel();
+  }
+
+  function movePrev() {
+    index = (index - 1 + techs.length) % techs.length;
+    renderCarousel();
+  }
+
+  document.getElementById("next").addEventListener("click", moveNext);
+  document.getElementById("prev").addEventListener("click", movePrev);
+
+  renderCarousel();
+</script>
 
     <!-- Portfolio Section -->
     <section id="portfolio" class="portfolio">
