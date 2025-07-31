@@ -303,76 +303,38 @@ body {
   z-index: 2;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap');
-
-.image-container {
-  position: relative;
-}
-
-.handwritten-note {
-  position: absolute;
-  font-family: 'Gloria Hallelujah', cursive;
-  color: #2563eb;
-  font-size: 1rem;
-  max-width: 120px;
-  text-align: center;
-  pointer-events: none;
-}
-
-.top-left {
-  top: -30px;
-  left: -100px;
-  rotate: -10deg;
-}
-
-.top-right {
-  top: -40px;
-  right: -80px;
-  rotate: 8deg;
-}
-
-.bottom-left {
-  bottom: -30px;
-  left: -80px;
-  rotate: -6deg;
-}
-
-.bottom-right {
-  bottom: -30px;
-  right: -90px;
-  rotate: 10deg;
-}
-
 .curved-arrow {
   position: absolute;
-  width: 120px;
-  height: 120px;
+  width: 60px;
+  height: 60px;
   pointer-events: none;
+  z-index: 1;
 }
 
 .arrow-tl {
-  top: -80px;
-  left: -80px;
+  top: -40px;
+  left: -60px;
   rotate: 15deg;
 }
 
 .arrow-tr {
-  top: -80px;
-  right: -80px;
+  top: -40px;
+  right: -60px;
   rotate: -15deg;
 }
 
 .arrow-bl {
-  bottom: -80px;
-  left: -80px;
+  bottom: -40px;
+  left: -60px;
   rotate: -15deg;
 }
 
 .arrow-br {
-  bottom: -80px;
-  right: -80px;
+  bottom: -40px;
+  right: -60px;
   rotate: 15deg;
 }
+
 
 .code-icon {
   position: absolute;
