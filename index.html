@@ -193,20 +193,18 @@
   function renderCards() {
     track.innerHTML = "";
 
-    const leftIndex = (current - 1 + techs.length) % techs.length;
-    const rightIndex = (current + 1) % techs.length;
+    // Criar apenas os 3 cards visíveis: left, center e right
+    const positions = ["left", "center", "right"];
+    const indexes = [
+      (current - 1 + techs.length) % techs.length,
+      current,
+      (current + 1) % techs.length
+    ];
 
-    // Card à esquerda
-    const leftCard = createCard(techs[leftIndex], "left");
-    track.appendChild(leftCard);
-
-    // Card central
-    const centerCard = createCard(techs[current], "center");
-    track.appendChild(centerCard);
-
-    // Card à direita
-    const rightCard = createCard(techs[rightIndex], "right");
-    track.appendChild(rightCard);
+    for (let i = 0; i < 3; i++) {
+      const card = createCard(techs[indexes[i]], positions[i]);
+      track.appendChild(card);
+    }
   }
 
   function createCard(tech, position) {

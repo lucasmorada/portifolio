@@ -373,9 +373,9 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 2rem;
   width: 100%;
   position: relative;
+  height: 100%;
 }
 
 .card {
@@ -386,7 +386,7 @@ body {
   padding: 2rem;
   text-align: center;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-  transition: all 0.4s ease;
+  transition: all 0.5s ease-in-out;
   position: absolute;
   opacity: 0;
   transform: scale(0.85);
@@ -395,7 +395,13 @@ body {
 }
 
 .card.left {
-  left: 0;
+  left: 40%;
+  opacity: 0.4;
+  z-index: 1;
+}
+
+.card.right {
+  left: 60%;
   opacity: 0.4;
   z-index: 1;
 }
@@ -407,12 +413,6 @@ body {
   z-index: 3;
   filter: none;
   pointer-events: auto;
-}
-
-.card.right {
-  right: 0;
-  opacity: 0.4;
-  z-index: 1;
 }
 
 .card-icon {
@@ -457,6 +457,7 @@ button#prev:hover,
 button#next:hover {
   color: #1f2937;
 }
+
 
 /* Portfolio Section */
 .portfolio {
