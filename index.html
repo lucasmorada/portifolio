@@ -166,43 +166,49 @@
   let current = 0;
   const track = document.getElementById("carouselTrack");
 
-  function renderCards() {
-    track.innerHTML = "";
+  const cards = [createCard(), createCard(), createCard()];
+  cards.forEach(card => track.appendChild(card));
 
-    const leftIndex = (current - 1 + techs.length) % techs.length;
-    const rightIndex = (current + 1) % techs.length;
-
-    const leftCard = createCard(techs[leftIndex], "left");
-    const centerCard = createCard(techs[current], "center");
-    const rightCard = createCard(techs[rightIndex], "right");
-
-    track.appendChild(leftCard);
-    track.appendChild(centerCard);
-    track.appendChild(rightCard);
-  }
-
-  function createCard(tech, position) {
+  function createCard() {
     const card = document.createElement("div");
-    card.className = `card ${position}`;
+    card.className = "card";
     card.innerHTML = `
-      <div class="card-icon">${tech.icon}</div>
-      <div class="card-title">${tech.title}</div>
-      <div class="card-desc">${tech.desc}</div>
+      <div class="card-icon"></div>
+      <div class="card-title"></div>
+      <div class="card-desc"></div>
     `;
     return card;
   }
 
+  function updateCards() {
+    const leftIndex = (current - 1 + techs.length) % techs.length;
+    const centerIndex = current;
+    const rightIndex = (current + 1) % techs.length;
+
+    const positions = [leftIndex, centerIndex, rightIndex];
+    const classes = ["left", "center", "right"];
+
+    cards.forEach((card, i) => {
+      const tech = techs[positions[i]];
+      card.querySelector(".card-icon").textContent = tech.icon;
+      card.querySelector(".card-title").textContent = tech.title;
+      card.querySelector(".card-desc").textContent = tech.desc;
+
+      card.className = `card ${classes[i]}`;
+    });
+  }
+
   document.getElementById("prev").addEventListener("click", () => {
     current = (current - 1 + techs.length) % techs.length;
-    renderCards();
+    updateCards();
   });
 
   document.getElementById("next").addEventListener("click", () => {
     current = (current + 1) % techs.length;
-    renderCards();
+    updateCards();
   });
 
-  renderCards();
+  updateCards();
 </script>
 
     <!-- Portfolio Section -->
