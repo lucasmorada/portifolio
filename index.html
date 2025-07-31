@@ -87,35 +87,30 @@
       <i class="fas fa-code"></i>
     </div>
 
-    <!-- Textos rabiscados com setas organizadas -->
-    <div class="scribble-notes">
-      <div class="note top-left">
-        <svg class="arrow-svg" viewBox="0 0 100 100">
-          <path d="M80,20 Q20,40 40,90" stroke="#2563eb" stroke-width="2" fill="none" marker-end="url(#arrowhead)" />
-        </svg>
-        <p>Curioso por natureza</p>
-      </div>
-      <div class="note top-right">
-        <svg class="arrow-svg" viewBox="0 0 100 100">
-          <path d="M20,20 Q80,40 60,90" stroke="#2563eb" stroke-width="2" fill="none" marker-end="url(#arrowhead)" />
-        </svg>
-        <p>Amo resolver bugs</p>
-      </div>
-      <div class="note bottom-left">
-        <svg class="arrow-svg" viewBox="0 0 100 100">
-          <path d="M80,80 Q20,60 40,10" stroke="#2563eb" stroke-width="2" fill="none" marker-end="url(#arrowhead)" />
-        </svg>
-        <p>Foco em resultados</p>
-      </div>
-      <div class="note bottom-right">
-        <svg class="arrow-svg" viewBox="0 0 100 100">
-          <path d="M20,80 Q80,60 60,10" stroke="#2563eb" stroke-width="2" fill="none" marker-end="url(#arrowhead)" />
-        </svg>
-        <p>Fullstack na veia</p>
-      </div>
-    </div>
+    <!-- Textos ao redor com estilo rabisco -->
+    <div class="handwritten-note top-left">Curioso por natureza</div>
+    <div class="handwritten-note top-right">Amo resolver bugs</div>
+    <div class="handwritten-note bottom-left">Foco em resultados</div>
+    <div class="handwritten-note bottom-right">Fullstack na veia</div>
 
-    <!-- Definição da pontinha da seta -->
+    <!-- Setas SVG curvadas -->
+    <svg class="curved-arrow arrow-tl" viewBox="0 0 100 100">
+      <path d="M90,10 Q20,30 40,90" stroke="#2563eb" stroke-width="3" fill="none" marker-end="url(#arrowhead)" />
+    </svg>
+
+    <svg class="curved-arrow arrow-tr" viewBox="0 0 100 100">
+      <path d="M10,10 Q80,30 60,90" stroke="#2563eb" stroke-width="3" fill="none" marker-end="url(#arrowhead)" />
+    </svg>
+
+    <svg class="curved-arrow arrow-bl" viewBox="0 0 100 100">
+      <path d="M90,90 Q20,70 40,10" stroke="#2563eb" stroke-width="3" fill="none" marker-end="url(#arrowhead)" />
+    </svg>
+
+    <svg class="curved-arrow arrow-br" viewBox="0 0 100 100">
+      <path d="M10,90 Q80,70 60,10" stroke="#2563eb" stroke-width="3" fill="none" marker-end="url(#arrowhead)" />
+    </svg>
+
+    <!-- Definição da pontinha de seta -->
     <svg width="0" height="0">
       <defs>
         <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="5" refY="3.5" orient="auto">
