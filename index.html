@@ -155,36 +155,12 @@
 
 <script>
   const techs = [
-    {
-      icon: "⚛️",
-      title: "React",
-      desc: "Biblioteca JavaScript para construir interfaces de usuário modernas e reativas."
-    },
-    {
-      icon: "⚡",
-      title: "Next.js",
-      desc: "Framework React com renderização server-side e rotas otimizadas para performance."
-    },
-    {
-      icon: "🛡️",
-      title: "TypeScript",
-      desc: "Superset do JavaScript que adiciona tipagem estática e maior segurança ao código."
-    },
-    {
-      icon: "🧠",
-      title: "Node.js",
-      desc: "Ambiente de execução para JavaScript no backend, ideal para APIs rápidas."
-    },
-    {
-      icon: "🐍",
-      title: "Python",
-      desc: "Linguagem versátil e poderosa usada em data science, back-end e automações."
-    },
-    {
-      icon: "🍃",
-      title: "MongoDB",
-      desc: "Banco de dados NoSQL orientado a documentos, ideal para aplicações escaláveis."
-    },
+    { icon: "⚛️", title: "React", desc: "Biblioteca JavaScript para construir interfaces de usuário modernas e reativas." },
+    { icon: "⚡", title: "Next.js", desc: "Framework React com renderização server-side e rotas otimizadas para performance." },
+    { icon: "🛡️", title: "TypeScript", desc: "Superset do JavaScript que adiciona tipagem estática e maior segurança ao código." },
+    { icon: "🧠", title: "Node.js", desc: "Ambiente de execução para JavaScript no backend, ideal para APIs rápidas." },
+    { icon: "🐍", title: "Python", desc: "Linguagem versátil e poderosa usada em data science, back-end e automações." },
+    { icon: "🍃", title: "MongoDB", desc: "Banco de dados NoSQL orientado a documentos, ideal para aplicações escaláveis." },
   ];
 
   let current = 0;
@@ -193,18 +169,16 @@
   function renderCards() {
     track.innerHTML = "";
 
-    // Criar apenas os 3 cards visíveis: left, center e right
-    const positions = ["left", "center", "right"];
-    const indexes = [
-      (current - 1 + techs.length) % techs.length,
-      current,
-      (current + 1) % techs.length
-    ];
+    const leftIndex = (current - 1 + techs.length) % techs.length;
+    const rightIndex = (current + 1) % techs.length;
 
-    for (let i = 0; i < 3; i++) {
-      const card = createCard(techs[indexes[i]], positions[i]);
-      track.appendChild(card);
-    }
+    const leftCard = createCard(techs[leftIndex], "left");
+    const centerCard = createCard(techs[current], "center");
+    const rightCard = createCard(techs[rightIndex], "right");
+
+    track.appendChild(leftCard);
+    track.appendChild(centerCard);
+    track.appendChild(rightCard);
   }
 
   function createCard(tech, position) {
