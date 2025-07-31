@@ -113,7 +113,8 @@ document.querySelectorAll(".project-card").forEach((card) => {
       }, { once: true });
     });
   });
-  
+
+  document.addEventListener('DOMContentLoaded', () => {
   const images = document.querySelectorAll('.profile-image');
   let current = 0;
 
@@ -121,7 +122,8 @@ document.querySelectorAll(".project-card").forEach((card) => {
     images[current].classList.remove('active');
     current = (current + 1) % images.length;
     images[current].classList.add('active');
-  }, 3000); // troca a cada 3 segundos
+  }, 3000);
+});
 
 // Typing effect for hero code snippet
 const codeSnippet = document.querySelector(".code-snippet span")
