@@ -336,6 +336,14 @@ body {
   margin-bottom: 1rem;
 }
 
+.section-title2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  font-size: var(--primary);
+
+}
+
 .section-subtitle {
   font-size: 1.125rem;
   color: var(--muted-foreground);
@@ -475,11 +483,11 @@ button#next {
 }
 
 button#prev {
-  left: 5%;
+  left: 15%;
 }
 
 button#next {
-  right: 5%;
+  right: 15%;
 }
 
 button#prev:hover,
