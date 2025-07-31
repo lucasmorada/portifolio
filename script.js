@@ -93,8 +93,8 @@ document.querySelectorAll(".project-card").forEach((card) => {
     const centerX = rect.width / 2
     const centerY = rect.height / 2
 
-    const rotateX = (y - centerY) / 20
-    const rotateY = (centerX - x) / 20
+    const rotateX = (y - centerY) / 22
+    const rotateY = (centerX - x) / 22
 
     card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`
   })
