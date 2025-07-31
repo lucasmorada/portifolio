@@ -303,39 +303,6 @@ body {
   z-index: 2;
 }
 
-.curved-arrow {
-  position: absolute;
-  width: 60px;
-  height: 60px;
-  pointer-events: none;
-  z-index: 1;
-}
-
-.arrow-tl {
-  top: -40px;
-  left: -60px;
-  rotate: 15deg;
-}
-
-.arrow-tr {
-  top: -40px;
-  right: -60px;
-  rotate: -15deg;
-}
-
-.arrow-bl {
-  bottom: -40px;
-  left: -60px;
-  rotate: -15deg;
-}
-
-.arrow-br {
-  bottom: -40px;
-  right: -60px;
-  rotate: 15deg;
-}
-
-
 .code-icon {
   position: absolute;
   bottom: -1rem;
