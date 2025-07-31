@@ -445,6 +445,9 @@ body {
 
 button#prev,
 button#next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
   background: none;
   border: none;
   font-size: 2rem;
@@ -452,14 +455,21 @@ button#next {
   cursor: pointer;
   transition: color 0.2s;
   z-index: 10;
-  padding: 1rem;
+  padding: 0.5rem;
+}
+
+button#prev {
+  left: 10%;
+}
+
+button#next {
+  right: 10%;
 }
 
 button#prev:hover,
 button#next:hover {
   color: #1f2937;
 }
-
 
 /* Portfolio Section */
 .portfolio {
@@ -479,11 +489,11 @@ button#next:hover {
   border-radius: 0.75rem;
   overflow: hidden;
   box-shadow: var(--shadow);
-  transition: all 0.3s ease;
+  transition: all 0.4s ease;
 }
 
 .project-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-2px);
   box-shadow: var(--shadow-lg);
 }
 
@@ -496,7 +506,7 @@ button#next:hover {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.3s ease;
+  transition: transform 0.4s ease;
 }
 
 .project-card:hover .project-image img {
@@ -533,7 +543,7 @@ button#next:hover {
   border-radius: 0.25rem;
   color: var(--muted-foreground);
   text-decoration: none;
-  transition: all 0.3s ease;
+  transition: all 0.4s ease;
 }
 
 .project-link:hover {
@@ -561,89 +571,6 @@ button#next:hover {
   font-size: 0.75rem;
   font-weight: 500;
   border: 1px solid var(--border);
-}
-
-/* Experience Section */
-.experience {
-  padding: 6rem 0;
-}
-
-.experience-list {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  max-width: 4xl;
-  margin: 0 auto;
-}
-
-.experience-card {
-  background: var(--card);
-  border-radius: 0.75rem;
-  padding: 2rem;
-  box-shadow: var(--shadow);
-  display: flex;
-  gap: 1.5rem;
-  align-items: flex-start;
-  transition: all 0.3s ease;
-}
-
-.experience-card:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
-}
-
-.experience-flag {
-  font-size: 2.5rem;
-  flex-shrink: 0;
-}
-
-.experience-content {
-  flex: 1;
-}
-
-.experience-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 0.5rem;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-
-.experience-header h3 {
-  font-size: 1.25rem;
-  font-weight: 700;
-}
-
-.experience-period {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  background: var(--accent);
-  padding: 0.25rem 0.75rem;
-  border-radius: 0.5rem;
-  font-size: 0.875rem;
-  color: var(--accent-foreground);
-  border: 1px solid var(--border);
-}
-
-.experience-company {
-  color: var(--primary);
-  font-weight: 600;
-  margin-bottom: 0.25rem;
-}
-
-.experience-location {
-  display: flex;
-  align-items: center;
-  gap: 0.25rem;
-  color: var(--muted-foreground);
-  font-size: 0.875rem;
-  margin-bottom: 0.75rem;
-}
-
-.experience-description {
-  color: var(--muted-foreground);
 }
 
 /* Testimonials Section */
