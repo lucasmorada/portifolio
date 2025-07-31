@@ -386,7 +386,6 @@ body {
 }
 
 /* Skills Section */
-
 .carousel-track {
   display: flex;
   justify-content: center;
@@ -476,11 +475,11 @@ button#next {
 }
 
 button#prev {
-  left: 10%;
+  left: 5%;
 }
 
 button#next {
-  right: 10%;
+  right: 5%;
 }
 
 button#prev:hover,
