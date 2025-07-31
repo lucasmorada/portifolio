@@ -103,6 +103,25 @@ document.querySelectorAll(".project-card").forEach((card) => {
     card.style.transform = "perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0px)"
   })
 })
+  const cards = document.querySelectorAll('.testimonial-card');
+
+  cards.forEach(card => {
+    card.addEventListener('mouseenter', () => {
+      card.classList.add('bouncing');
+      card.addEventListener('animationend', () => {
+        card.classList.remove('bouncing');
+      }, { once: true });
+    });
+  });
+  
+  const images = document.querySelectorAll('.profile-image');
+  let current = 0;
+
+  setInterval(() => {
+    images[current].classList.remove('active');
+    current = (current + 1) % images.length;
+    images[current].classList.add('active');
+  }, 3000); // troca a cada 3 segundos
 
 // Typing effect for hero code snippet
 const codeSnippet = document.querySelector(".code-snippet span")
