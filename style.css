@@ -591,12 +591,11 @@ button#next:hover {
   border-radius: 0.75rem;
   padding: 2rem;
   box-shadow: var(--shadow);
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease;
 }
 
 .testimonial-card:hover {
-  animation: bounce 0.5s ease;
-  box-shadow: var(--shadow-md);
+  transform: translateY(-4px) scale(1.02);
 }
 
 @keyframes bounce {
