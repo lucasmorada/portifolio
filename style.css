@@ -303,6 +303,42 @@ body {
   z-index: 2;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap');
+
+.handwritten-note {
+  position: absolute;
+  font-family: 'Gloria Hallelujah', cursive;
+  color: #2563eb; /* azul */
+  font-size: 1rem;
+  max-width: 120px;
+  text-align: center;
+  pointer-events: none;
+}
+
+.top-left {
+  top: -30px;
+  left: -100px;
+  rotate: -10deg;
+}
+
+.top-right {
+  top: -40px;
+  right: -80px;
+  rotate: 8deg;
+}
+
+.bottom-left {
+  bottom: -30px;
+  left: -80px;
+  rotate: -6deg;
+}
+
+.bottom-right {
+  bottom: -30px;
+  right: -90px;
+  rotate: 10deg;
+}
+
 .code-icon {
   position: absolute;
   bottom: -1rem;
