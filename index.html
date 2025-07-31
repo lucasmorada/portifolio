@@ -187,42 +187,50 @@
     },
   ];
 
+  let current = 0;
   const track = document.getElementById("carouselTrack");
 
-  let index = 0;
-
-  function renderCarousel() {
+  function renderCards() {
     track.innerHTML = "";
 
-    for (let i = 0; i < techs.length; i++) {
-      const card = document.createElement("div");
-      card.className = "card";
-      if (i === index) card.classList.add("active");
+    const leftIndex = (current - 1 + techs.length) % techs.length;
+    const rightIndex = (current + 1) % techs.length;
 
-      card.innerHTML = `
-        <div class="card-icon">${techs[i].icon}</div>
-        <div class="card-title">${techs[i].title}</div>
-        <div class="card-desc">${techs[i].desc}</div>
-      `;
+    // Card à esquerda
+    const leftCard = createCard(techs[leftIndex], "left");
+    track.appendChild(leftCard);
 
-      track.appendChild(card);
-    }
+    // Card central
+    const centerCard = createCard(techs[current], "center");
+    track.appendChild(centerCard);
+
+    // Card à direita
+    const rightCard = createCard(techs[rightIndex], "right");
+    track.appendChild(rightCard);
   }
 
-  function moveNext() {
-    index = (index + 1) % techs.length;
-    renderCarousel();
+  function createCard(tech, position) {
+    const card = document.createElement("div");
+    card.className = `card ${position}`;
+    card.innerHTML = `
+      <div class="card-icon">${tech.icon}</div>
+      <div class="card-title">${tech.title}</div>
+      <div class="card-desc">${tech.desc}</div>
+    `;
+    return card;
   }
 
-  function movePrev() {
-    index = (index - 1 + techs.length) % techs.length;
-    renderCarousel();
-  }
+  document.getElementById("prev").addEventListener("click", () => {
+    current = (current - 1 + techs.length) % techs.length;
+    renderCards();
+  });
 
-  document.getElementById("next").addEventListener("click", moveNext);
-  document.getElementById("prev").addEventListener("click", movePrev);
+  document.getElementById("next").addEventListener("click", () => {
+    current = (current + 1) % techs.length;
+    renderCards();
+  });
 
-  renderCarousel();
+  renderCards();
 </script>
 
     <!-- Portfolio Section -->
