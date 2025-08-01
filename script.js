@@ -103,16 +103,6 @@ document.querySelectorAll(".project-card").forEach((card) => {
     card.style.transform = "perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0px)"
   })
 })
-  const cards = document.querySelectorAll('.testimonial-card');
-
-  cards.forEach(card => {
-    card.addEventListener('mouseenter', () => {
-      card.classList.add('bouncing');
-      card.addEventListener('animationend', () => {
-        card.classList.remove('bouncing');
-      }, { once: true });
-    });
-  });
 
   document.addEventListener('DOMContentLoaded', () => {
   const images = document.querySelectorAll('.profile-image');
