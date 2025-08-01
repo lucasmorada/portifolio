@@ -611,18 +611,7 @@ button#next:hover {
 }
 
 .testimonial-card:hover {
-  transform: translateY(-4px) scale(1.02);
-}
-
-@keyframes bounce {
-  0%   { transform: translateY(0); }
-  30%  { transform: translateY(-8px); }
-  60%  { transform: translateY(4px); }
-  100% { transform: translateY(0); }
-}
-
-.testimonial-card.bouncing {
-  animation: bounce 0.4s ease;
+  transform: translateY(-8px);
 }
 
 .quote-icon {
