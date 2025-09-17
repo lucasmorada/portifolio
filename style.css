@@ -198,10 +198,36 @@ body {
   margin-top: 4rem;
 }
 
+/* Hero Section */
 .hero-content {
   display: grid;
   gap: 3rem;
   align-items: center;
+}
+
+@media (min-width: 768px) {
+  .hero-content {
+    grid-template-columns: 1fr 400px; /* Texto à esquerda, imagem à direita */
+  }
+}
+
+@media (max-width: 767px) {
+  .hero-content {
+    grid-template-columns: 1fr; /* Apenas uma coluna, texto em cima, imagem abaixo */
+  }
+
+  .hero-image {
+    width: 100%;
+    max-width: 300px; /* ajusta tamanho da imagem no mobile */
+    margin: 0 auto;
+  }
+
+  .slideshow,
+  .profile-image {
+    width: 100%;
+    height: auto; /* ajusta proporcionalmente */
+    max-width: 300px;
+  }
 }
 
 .code-snippet {
